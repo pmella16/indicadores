@@ -4,11 +4,11 @@ app de indicadores con la api https://mindicador.cl/
 
 instrucciones:
 
-git clone
+git clone https://github.com/pmella16/indicadores.git
 
 cd indicadores
 
-yanr o npm i
+yarn o npm i
 
 npx pod-install
 
