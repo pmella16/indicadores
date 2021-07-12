@@ -1,0 +1,6 @@
+module Pods_indicadores {
+  umbrella header "Pods-indicadores-umbrella.h"
+
+  export *
+  module * { export * }
+}

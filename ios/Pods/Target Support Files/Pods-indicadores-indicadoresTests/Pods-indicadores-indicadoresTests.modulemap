@@ -1,0 +1,6 @@
+module Pods_indicadores_indicadoresTests {
+  umbrella header "Pods-indicadores-indicadoresTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
