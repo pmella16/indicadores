@@ -6,9 +6,10 @@ import {
 import axios from 'axios'
 import Indicador from './componets/Indicador';
 import Geolocation from '@react-native-community/geolocation';
-
+import { ActivityIndicator, Colors } from 'react-native-paper';
 const App = ({navigation}) => {
 
+  const [showLoading, setShowLoading] = React.useState(true);
   const [indicadores, setIndicadores] = React.useState([]);
 
   const goDetails = (item) => {
@@ -38,7 +39,7 @@ const App = ({navigation}) => {
         res.push(data.dolar);
         res.push(data.ivp);
         res.push(data.uf);
-
+        setShowLoading(false);
         setIndicadores(res);
 
       })
@@ -51,7 +52,11 @@ const App = ({navigation}) => {
   }, []);
 
   return (
-  
+  <>
+    { showLoading ?
+      <ActivityIndicator animating={true} color={Colors.red800} />
+      
+      :
 
         <FlatList
 
@@ -61,9 +66,9 @@ const App = ({navigation}) => {
           }}
           keyExtractor={(item, index) => index.toString()}
         />
-
+    }
     
- 
+ </>
   );
 };
 
